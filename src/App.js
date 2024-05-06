@@ -5,6 +5,9 @@ import Photo from "./component/photo";
 import Price from "./component/price";
 import RoomList from "./component/room-list";
 import Description from "./component/description";
+import Details from "./component/details";
+import Amenities from "./component/amenities";
+
 
 function App() {
   const data = {
@@ -154,6 +157,7 @@ function App() {
 
   return <Page>
     <Header />
+    
     <Title
     title={data.listing_name}
     rating={data.reviews_summary.average_rating}
@@ -162,7 +166,9 @@ function App() {
     country={data.location.country}
     superhost={data.superhost}
     />
+
     <Photo src={data.image} name={data.listing_name} />
+
     <Price
     price={data.price.original_price}
     discount={data.price.discounted_price}
@@ -173,9 +179,32 @@ function App() {
     checkout={data.availability.checkout_date}
     />
     <RoomList list={data.roomTypes} />
+
     <Description title="Опис" children={data.description} />
 
+    < Details 
+    title="Деталі властивості"
+    guests={data.property_details.guests} 
+    bedrooms={data.property_details.bedrooms}
+    beds={data.property_details.beds}
+    baths={data.property_details.baths}
+    />
+
     <Description title="Про сусідів" children={data.neighborhood_info} />
+
+  < Amenities 
+    title="Зручності"
+    pool={data.amenities.hasPool} 
+    gym={data.amenities.hasGym} 
+    freeBreakfast={data.amenities.hasFreeBreakfast} 
+    freeWiFi={data.amenities.hasFreeWiFi} 
+    parking={data.amenities.hasParking} 
+    petsAllowed={data.amenities.hasPetsAllowed} 
+    airportShuttle={data.amenities.hasAirportShuttle} 
+    conciergeService={data.amenities.hasConciergeService} 
+    roomService={data.amenities.hasRoomService} 
+    childFriendly={data.amenities.hasChildFriendly} 
+    />    
 
     </Page>;
 }

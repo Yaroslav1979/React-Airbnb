@@ -1,0 +1,17 @@
+.property-details {
+    box-shadow: 0 0 20px #DEE2E6;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.details__list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+

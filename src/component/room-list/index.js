@@ -1,8 +1,8 @@
 import { Fragment } from "react";
 import Heading from "../heading";
-import Box from "./box";
-
+import Box from "../box";
 import "./index.css";
+
 
 export default function RoomList({list }) {
     return (
@@ -20,16 +20,19 @@ export default function RoomList({list }) {
     );
 }
 
-function Item({ type, pricePerNight: price, curency, capacity }) {
+function Item({ type, pricePerNight: price, currency, capacity }) {
     return (
         <Box className="room">
             <span className="room-title">{type} </span>
             <span className="room-info">Кількість гостей: {capacity} </span>
             <span className="room-price">
-                {curency}
+                {currency}
                 {price}
             </span>
         </Box>
     );
 }
+
+
+
 

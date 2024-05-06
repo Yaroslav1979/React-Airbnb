@@ -4,24 +4,30 @@
     gap: 24px;
 }
 
-.room__list {
+.room {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.room-list {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
 }
 
-.room__title {
+.room-title {
     color: #000;
     font-size: 24px;
     font-weight: bold;
 }
 
-.room__info {
+.room-info {
     font-size: 16px;
     color: #000;
 }
 
-.room__price {
+.room-price {
     font-size: 20px;
     color: #000;
     font-weight: bold;
