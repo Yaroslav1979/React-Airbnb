@@ -1,0 +1,13 @@
+.attraction__block {
+    box-shadow: 0 0 20px #DEE2E6;
+    display: flex;
+    flex-direction: column;   
+}
+
+.attraction {
+    display: flex;
+    flex-direction: column;  
+    margin-top: 24px;  
+    color: black;
+    font-size: 16px;    
+}

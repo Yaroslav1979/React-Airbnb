@@ -7,7 +7,10 @@ import RoomList from "./component/room-list";
 import Description from "./component/description";
 import Details from "./component/details";
 import Amenities from "./component/amenities";
-
+import Contact from "./component/contacts";
+import Add from "./component/add";
+import Reviews from "./component/reviews";
+import Attractions from "./component/attractions"
 
 function App() {
   const data = {
@@ -89,22 +92,22 @@ function App() {
       name: "Kerthy",
       image: "https://picsum.photos/80/80",
       response_rate: 100,
-      response_time: "within an hour",
-      info: "I'm an Austin-Brooklyn filmmaker and television producer who can be found biking to the Farmer's Market...",
+      response_time: "Протягом години",
+      info: "Я кінорежисерка і телевізійний продюсер Остіна-Брукліна, якого можна знайти на велосипеді до Фермерського ринку...",
       phone: "+123-456-7890",
     },
 
     additional_properties: {
       house_rules:
-        "No smoking or pets allowed. Quiet hours from 10:00 PM to 7:00 AM.",
+        "Паління та домашні тварини заборонені. Тиша з 22:00 до 7:00",
       cancellation_policy:
-        "Flexible cancellation policy with full refund if canceled 7 days before check-in.",
+        "Гнучка політика скасування з повним поверненням коштів у разі скасування за 7 днів до заїзду.",
       local_transportation:
-        "Public buses and taxis available within walking distance.",
+        "Громадські автобуси та таксі в межах пішої досяжності.",
       host_languages: ["English", "Spanish"],
-      special_offers: "10% discount for bookings of 7 nights or more.",
-      "check-in_instructions":
-        "Check-in time is 3:00 PM. Please contact us in advance with your estimated arrival time.",
+      special_offers: "Знижка 10% при бронюванні від 7 ночей",
+      checkIn_instructions:
+        "Час реєстрації - 15:00. Будь ласка, зв'яжіться з нами заздалегідь, повідомте орієнтовний час свого прибуття",
     },
 
     guestReviews: [
@@ -178,6 +181,7 @@ function App() {
     checkin={data.availability.checkin_date}
     checkout={data.availability.checkout_date}
     />
+
     <RoomList list={data.roomTypes} />
 
     <Description title="Опис" children={data.description} />
@@ -204,9 +208,37 @@ function App() {
     conciergeService={data.amenities.hasConciergeService} 
     roomService={data.amenities.hasRoomService} 
     childFriendly={data.amenities.hasChildFriendly} 
-    />    
+    />  
+      
+    <Contact 
+    title={data.contact_info.name}
+    src={data.contact_info.image}
+    rate={data.contact_info.response_rate}
+    time={data.contact_info.response_time}
+    info={data.contact_info.info}
+    phone={data.contact_info.phone}
+    />
 
-    </Page>;
+    <Add
+    title="Додаткові відомості"
+    rules={data.additional_properties.house_rules}
+    policy={data.additional_properties.cancellation_policy}
+    transport={data.additional_properties.local_transportation}
+    list={data.additional_properties.host_languages}
+    offers={data.additional_properties.special_offers}
+    instructions={data.additional_properties.checkIn_instructions}
+    />
+     <Reviews 
+    title="Відгуки клієнтів"
+    list={data.guestReviews}
+    />
+
+    <Attractions 
+    title="Пам'ятки поблизу"
+    list={data.nearbyAttractions}
+    />
+
+    </Page>   
 }
 
 export default App;

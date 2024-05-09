@@ -1,0 +1,21 @@
+.contact__block {
+    display: block;    
+    gap: 28px;
+}
+.contact {
+    display: flex;    
+    gap: 20px;
+}
+
+.contact>img {
+    border-radius: 40px;    
+}
+
+.contact__sub-block {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+
+
